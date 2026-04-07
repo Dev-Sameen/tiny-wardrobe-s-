@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tiny Wardrobe — Little Clothes, Big Smiles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+  <!-- ════════════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-icon">✦</span>
+        <div class="logo-text">
+          <span class="logo-main">Tiny Wardrobe</span>
+          <span class="logo-sub">est. 2020 · Lahore</span>
+        </div>
+      </a>
+ 
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#shop" class="nav-link">Shop</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+ 
+      <div class="nav-actions">
+        <button class="cart-trigger" id="cartTrigger" onclick="scrollToCart()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+ 
+  <!-- ════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">New Collection · Spring 2025</p>
+        <h1 class="hero-title">
+          Little Clothes,<br>
+          <em>Big Smiles</em>
+        </h1>
+        <p class="hero-tagline">Thoughtfully crafted children's wear for ages 0–12.<br>Premium fabrics. Playful designs. Made with love.</p>
+        <div class="hero-cta-group">
+          <a href="#shop" class="btn-primary">Explore Collection</a>
+          <a href="#about" class="btn-ghost">Our Story</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item">
+            <strong>5,000+</strong>
+            <span>Happy Families</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <strong>4.9★</strong>
+            <span>Rating</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <strong>100%</strong>
+            <span>Safe Fabrics</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image-grid">
+        <div class="hero-img-card hero-img-1">
+          <img src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=400&q=80" alt="children fashion" />
+        </div>
+        <div class="hero-img-card hero-img-2">
+          <img src="https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=400&q=80" alt="kids outfit" />
+        </div>
+        <div class="hero-img-card hero-img-2">
+          <img src="https://as1.ftcdn.net/v2/jpg/06/68/45/72/1000_F_668457227_wJ6cXIDR5TIN7ADwTtbMGMFCzMh96UgL.jpg" alt="kids outfit"/>
+        </div>
+        <div class="hero-img-card hero-img-2">
+          <img src="https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=400&q=80" alt="kids outfit" />
+        </div>
+        <div class="hero-img-card hero-img-3">
+          <img src="https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?w=400&q=80" alt="baby clothes" />
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ════════════════════════════════════════
+       SHOP
+  ════════════════════════════════════════ -->
+  <section class="section" id="shop">
+    <div class="container">
+      <div class="section-header fade-up">
+        <p class="section-eyebrow">Curated for your little ones</p>
+        <h2 class="section-title">Our Collection</h2>
+        <div class="title-ornament"></div>
+      </div>
+      <div class="products-grid" id="productsGrid">
+        <!-- rendered by JS -->
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ════════════════════════════════════════
+       CART
+  ════════════════════════════════════════ -->
+  <section class="section section-alt" id="cart">
+    <div class="container">
+      <div class="section-header fade-up">
+        <p class="section-eyebrow">Review before ordering</p>
+        <h2 class="section-title">Your Cart</h2>
+        <div class="title-ornament"></div>
+      </div>
+      <div class="cart-wrapper">
+        <div class="cart-empty" id="cartEmpty">
+          <div class="empty-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+          </div>
+          <h3>Your cart is empty</h3>
+          <p>Add some beautiful pieces for your little ones</p>
+          <a href="#shop" class="btn-primary" style="display:inline-block;margin-top:1rem;">Browse Collection</a>
+        </div>
+ 
+        <div class="cart-content hidden" id="cartContent">
+          <div class="cart-items-list" id="cartItemsList"></div>
+          <div class="cart-summary-box">
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="subtotalAmt">PKR 0</span>
+            </div>
+            <div class="summary-row">
+              <span>Shipping</span>
+              <span class="free-tag">FREE</span>
+            </div>
+            <div class="summary-row summary-total">
+              <span>Total</span>
+              <span id="totalAmt">PKR 0</span>
+            </div>
+            <button class="btn-primary btn-full" onclick="openModal()">
+              Place Order · Cash on Delivery
+            </button>
+            <p class="cod-note">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Secure · No online payment required
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ════════════════════════════════════════
+       ABOUT
+  ════════════════════════════════════════ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-col fade-up">
+          <div class="about-img-frame">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="children clothing boutique" />
+          </div>
+          <div class="about-img-accent">
+            <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=300&q=80" alt="kids fashion" />
+          </div>
+        </div>
+        <div class="about-text-col fade-up">
+          <p class="section-eyebrow">Our Story</p>
+          <h2 class="section-title">Dressed with Love,<br><em>Made for Joy</em></h2>
+          <div class="title-ornament" style="margin:1rem 0 1.5rem;"></div>
+          <p class="about-para">Tiny Wardrobe was born from a mother's desire to find clothing that was both beautiful and safe for her children. What started as a small passion project in Lahore has grown into a beloved brand trusted by families across Pakistan.</p>
+          <p class="about-para">Every piece we carry is crafted from OEKO-TEX certified, skin-safe fabrics — free from harmful dyes and chemicals. We believe children deserve to play freely and look wonderful doing it.</p>
+          <div class="about-stats-grid">
+            <div class="about-stat fade-up">
+              <div class="stat-number">5,000+</div>
+              <div class="stat-label">Happy Customers</div>
+            </div>
+            <div class="about-stat fade-up">
+              <div class="stat-number">200+</div>
+              <div class="stat-label">Products</div>
+            </div>
+            <div class="about-stat fade-up">
+              <div class="stat-number">4.9/5</div>
+              <div class="stat-label">Avg Rating</div>
+            </div>
+            <div class="about-stat fade-up">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Safe Fabrics</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ════════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════════ -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <div class="section-header fade-up">
+        <p class="section-eyebrow">We're here for you</p>
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="title-ornament"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card fade-up">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12.72 19.79 19.79 0 01.01 4.11 2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.29 6.29l1.27-.73a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+          </div>
+          <h4>WhatsApp</h4>
+          <p>+92 300 123 4567</p>
+          <span>Mon–Sat, 10am–8pm</span>
+        </div>
+        <div class="contact-card fade-up">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <h4>Email</h4>
+          <p>hello@tinywardrobe.pk</p>
+          <span>Response within 24hrs</span>
+        </div>
+        <div class="contact-card fade-up">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h4>Location</h4>
+          <p>Lahore, Punjab</p>
+          <span>Pakistan</span>
+        </div>
+        <div class="contact-card fade-up">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h4>Store Hours</h4>
+          <p>Mon – Sat</p>
+          <span>10:00 AM – 8:00 PM</span>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-icon">✦</span>
+            <span>Tiny Wardrobe</span>
+          </div>
+          <p class="footer-tagline">"Little Clothes, Big Smiles"</p>
+          <p class="footer-desc">Premium children's wear crafted with love for little ones across Pakistan. Safe fabrics, joyful designs, delivered to your door.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigate</h5>
+          <a href="#home">Home</a>
+          <a href="#shop">Shop</a>
+          <a href="#about">Our Story</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Categories</h5>
+          <a href="#shop">Baby (0–2 yrs)</a>
+          <a href="#shop">Toddler (2–5 yrs)</a>
+          <a href="#shop">Kids (5–9 yrs)</a>
+          <a href="#shop">Tween (9–12 yrs)</a>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <a href="#contact">WhatsApp Us</a>
+          <a href="#contact">Returns Policy</a>
+          <a href="#contact">Size Guide</a>
+          <a href="#contact">Track Order</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Tiny Wardrobe. All rights reserved. Made with love in Lahore, Pakistan.</p>
+        <p class="footer-cod-badge">Cash on Delivery · Nationwide Shipping</p>
+      </div>
+    </div>
+  </footer>
+ 
+  <!-- ════════════════════════════════════════
+       ORDER MODAL
+  ════════════════════════════════════════ -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box" id="modalBox">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-header">
+        <h3>Complete Your Order</h3>
+        <p>Enter your delivery details below</p>
+      </div>
+      <div class="cod-ribbon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Cash on Delivery — Pay when you receive your order
+      </div>
+      <div class="modal-form">
+        <div class="form-row">
+          <label for="fName">Full Name *</label>
+          <input type="text" id="fName" placeholder="e.g. Ayesha Khan" autocomplete="name" />
+          <span class="field-error" id="errName"></span>
+        </div>
+        <div class="form-row">
+          <label for="fPhone">Phone Number *</label>
+          <input type="tel" id="fPhone" placeholder="03XX-XXXXXXX" autocomplete="tel" />
+          <span class="field-error" id="errPhone"></span>
+        </div>
+        <div class="form-row">
+          <label for="fCity">City *</label>
+          <input type="text" id="fCity" placeholder="e.g. Lahore" autocomplete="address-level2" />
+          <span class="field-error" id="errCity"></span>
+        </div>
+        <div class="form-row">
+          <label for="fAddress">Delivery Address *</label>
+          <textarea id="fAddress" rows="3" placeholder="House #, Street, Block, Area..." autocomplete="street-address"></textarea>
+          <span class="field-error" id="errAddress"></span>
+        </div>
+        <button class="btn-primary btn-full" onclick="confirmOrder()">
+          Confirm Order
+        </button>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ════════════════════════════════════════
+       THANK YOU PAGE
+  ════════════════════════════════════════ -->
+  <div class="thankyou-screen" id="thankyouScreen">
+    <div class="ty-card">
+      <div class="ty-check-wrap">
+        <svg class="ty-check-svg" viewBox="0 0 52 52">
+          <circle class="ty-check-circle" cx="26" cy="26" r="25" fill="none"/>
+          <path class="ty-check-mark" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+      </div>
+      <p class="ty-urdu">شکریہ! آپ کا آرڈر بک ہو گیا ہے 🎉</p>
+      <h2 class="ty-heading">Thank You!</h2>
+      <p class="ty-sub">Your order has been placed successfully.<br>Our team will contact you within 24 hours to confirm delivery.</p>
+      <div class="ty-summary" id="tySummary"></div>
+      <button class="btn-primary" onclick="continueShopping()">Continue Shopping</button>
+    </div>
+  </div>
+ 
+  <!-- ════════════════════════════════════════
+       TOAST CONTAINER
+  ════════════════════════════════════════ -->
+  <div class="toast-wrap" id="toastWrap"></div>
+ 
+  <script src="script.js"></script>
+</body>
+</html>
